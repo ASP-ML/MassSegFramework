@@ -63,6 +63,7 @@ cd MassSeg
             $ python -m pip install matlabengine==24.1.2
             ```
 ## Project Structure
+```
 MassSeg/  
 ├── DetectionModels/  
 ├── Pipeline/  
@@ -149,7 +150,7 @@ MassSeg/
 │   └── requirements_PL.txt  
 ├── .gitignore  
 └── README.md
-
+```
 ### Running the Pipeline:
 1. Configure and Run `pipeline.py`
     - Open the pipeline.py file located in the Pipeline/Code folder.
