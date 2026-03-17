@@ -1,11 +1,23 @@
-# MassSeg: A New Breast Mass Segmentation Method Based on Deep Learning and Active Contour Model (AIM)
+# MassSeg: A Breast Mass Detection and Segmentation Framework Based on Deep Learning and Active Contour Model
 
 ## Project Objective:
-Implement MassSeg, a new automatic two-step breast mass segmentation method that combines the YOLOv8 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
+Implement MassSeg, a new automatic two-step breast mass segmentation method that combines the YOLOv11 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
 
-## Instructions for Running the Code
+##Table of Contents:
+- [Installation](#installation)
+    - [MATLAB Setup](#matlab-setup)
+- [Project Structure](#project-structure)
+- [Running the Pipeline](#running-pipeline)
+    - [Step 1: Main Pipeline](#step-1-main-pipeline)
+    - [Step 2: Mask Post-processing](#step-2-mask-post-processing)
+    - [Step 3: Metrics Computation](#step-3-metrics-computation)
+    - [Step 4: Results Analysis](#step-4-results-analysis)
+- [Datasets](#datasets)
+- [Training YOLO Models (Google Colab)](#train-yolo)
+- [Troubleshooting](#troubleshooting)
+
+## Installation
 ### Prerequisites
-Before proceeding, ensure you have installed the following:
 - Python 3.9 and Conda
 - Visual Studio Code (or your preferred IDE)
 - MATLAB R2024a. When installing, add these add-ons:
@@ -14,15 +26,20 @@ Before proceeding, ensure you have installed the following:
     - MATLAB Compiler
     - MATLAB SDK
     - MATLAB Test
+ 
+### Clone the repository:
+bash 
+git clone https://github.com/ASP-ML/MassSeg.git 
+cd MassSeg
 
-### Setup MATLAB
+### MATLAB Setup
 1. Install the MATLAB Add-On for Python Integration
     - Open MATLAB.
     - Click on Add-Ons, then on Get Add-Ons.
     - Search for "Using MATLAB with Python" and install the version provided by Sebastian Castro.
 2. Set Up MATLAB Path
     - In MATLAB, click Set Path.
-    - Click Add Folder and add the path to the Matlab folder in the provided Pipeline code (e.g., C:\Users\camiz\Breast_Cancer_Investigation\Pipeline\Matlab).
+    - Click Add Folder and add the path to the Matlab folder in the provided Pipeline code (e.g., C:\Users\user\MassSeg\Pipeline\Matlab).
     - Select the newly added path, click Move to Top, then Save, and Close.
 
 ### Setup Running Enviorment
