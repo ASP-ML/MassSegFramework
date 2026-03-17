@@ -148,7 +148,6 @@ MassSeg/
 │   │   └── processDataset.ipynb  
 │   ├── instal_conda_PL.ps1  
 │   └── requirements_PL.txt  
-├── .gitignore  
 └── README.md
 ```
 ### Running the Pipeline:
