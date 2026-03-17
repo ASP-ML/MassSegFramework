@@ -28,9 +28,10 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - MATLAB Test
  
 ### Clone the repository:
-bash   
-git clone https://github.com/ASP-ML/MassSeg.git   
-cd MassSeg  
+```bash
+git clone https://github.com/ASP-ML/MassSeg.git
+cd MassSeg
+```
 
 ### MATLAB Setup
 1. Install the MATLAB Add-On for Python Integration
