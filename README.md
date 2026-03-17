@@ -29,7 +29,7 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - MATLAB SDK
     - MATLAB Test
  
-### Clone the repository:
+### Clone the repository
 ```bash
 git clone https://github.com/ASP-ML/MassSeg.git
 cd MassSeg
@@ -58,13 +58,103 @@ cd MassSeg
             ```bash
             $ cd '.\extern\engines\python'
             ```
-        - When installing the engine API, install version 24.1.2 (ensure the BCIenv environment is activated in your IDE's terminal before running the command): 
+        - Install engine API version 24.1.2 (ensure the BCIenv environment is activated in your IDE's terminal before running the command): 
             ```bash
             $ python -m pip install matlabengine==24.1.2
             ```
+## Project Structure
+MassSeg/
+├── DetectionModels/
+├── Pipeline/
+│   ├── CBIS-DDSMDataset/
+│   │   ├── InputImages/
+│   │   │   ├── OrignalTestImages/ 
+│   │   │   │   ├── groundTrue/    # Ground truth mask
+│   │   │   │   └── images/        # Original mammograms use for the pipeline
+│   │   │   ├── PreprocessImages/  
+│   │   │   │   ├── crop/          # Crop image of the mass detected
+│   │   │   │   ├── filtered/      # Crop image after the CLAHE filter
+│   │   │   │   └── grayscale/     # Crop filtered image convert into grayscale
+│   │   ├── OriginalTestImages/    # Original mammograms use as ground truth
+│   │   ├── Results/
+│   │   │   ├── coordinates/       # Detected bounding boxes
+│   │   │   ├── joinedMasks/       # Combined mammogram image size segmented mass masks
+│   │   │   ├── masks/             # Individual segmented mass masks
+│   │   │   │  ├── crop/           # Crop segmented mass masks
+│   │   │   │  └── whole/          # Original mammogram image size segmented mass masks   
+│   │   │   └── metrics/           # Evaluation metrics
+│   │   └── TestLabels/            # Ground truth bounding boxes
+│   │
+│   ├── Code/
+│   │   ├── activeCountours.py
+│   │   ├── pipeline.py
+│   │   ├── cropImage.py
+│   │   ├── joinMasks.py
+│   │   ├── metrics.py
+│   │   ├── morphsnakes_v1.py
+│   │   ├── morphsnakes.py
+│   │   ├── pipeline.py
+│   │   ├── resultAnalysis.ipynb
+│   │   ├── setup.py
+│   │   └── test_morphsnakes.py
+│   │ 
+│   ├── INbreastDataset/
+│   │   ├── InputImages/
+│   │   │   ├── OrignalTestImages/ 
+│   │   │   │   ├── groundTrue/
+│   │   │   │   └── images/
+│   │   │   ├── PreprocessImages/  
+│   │   │   │   ├── crop/
+│   │   │   │   ├── filtered/
+│   │   │   │   └── grayscale/
+│   │   ├── OriginalTestImages/
+│   │   ├── Results/
+│   │   │   ├── coordinates/
+│   │   │   ├── joinedMasks/
+│   │   │   ├── masks/
+│   │   │   │  ├── crop/
+│   │   │   │  └── whole/  
+│   │   │   └── metrics/
+│   │   └── TestLabels/
+│   │
+│   ├── Matlab/
+│   │   ├── cropToOriginalMaskCV.m
+│   │   └── filtered_oneImage.m
+│   │
+│   └── miniMIASDataset/
+│   │   ├── InputImages/
+│   │   │   ├── OrignalTestImages/ 
+│   │   │   │   ├── images/
+│   │   │   │   └── massInfo.txt
+│   │   │   ├── PreprocessImages/  
+│   │   │   │   ├── CBIS-DDSM/ 
+│   │   │   │   │   ├── crop/
+│   │   │   │   │   ├── filtered/
+│   │   │   │   │   └── grayscale/
+│   │   │   │   ├── INbreast/ 
+│   │   │   │   │   ├── crop/
+│   │   │   │   │   ├── filtered/
+│   │   │   │   │   └── grayscale/
+│   │   ├── OriginalTestImages/
+│   │   ├── Results/
+│   │   │   ├── coordinates/
+│   │   │   ├── joinedMasks/
+│   │   │   │   ├── CBIS-DDSM/
+│   │   │   │   └── INbreast/  
+│   │   │   ├── masks/
+│   │   │   │   ├── CBIS-DDSM/
+│   │   │   │   │   ├── crop/
+│   │   │   │   │   └── whole/ 
+│   │   │   │   ├── INbreast/   
+│   │   │   │   │   ├── crop/
+│   │   │   │   │   └── whole/ 
+│   │   └── processDataset.ipynb
+│   ├── instal_conda_PL.ps1
+│   └── requirements_PL.txt
+├── .gitignore
+└── README.md
 
 ### Running the Pipeline:
-Igual aqui creo que puedo opmizarle mejor para que no tengan que descomentar y comentar cosas, pero si le ve bien le dejo como esta
 1. Configure and Run `pipeline.py`
     - Open the pipeline.py file located in the Pipeline/Code folder.
     - Modify the script as follows:
