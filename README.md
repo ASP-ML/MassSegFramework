@@ -49,7 +49,7 @@ cd MassSeg
 1. Setup the Python Environment
    In your IDE's terminal (e.g., Visual Studio Code), run the install_conda_PL.ps1 script.   
 3. Install MATLAB Engine API for Python
-    - Follow the official [MATLAB Engine API installation steps](#https://la.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html)
+    - Follow the official [MATLAB Engine API installation steps](https://la.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html)
         - Before doing the installation, navigate to the MATLAB installation directory using the terminal (Windows-Specific Command). Be sure to be in the C:\ folder: 
             ```bash
             $ cd '.\Program Files\MATLAB\R2024a'
