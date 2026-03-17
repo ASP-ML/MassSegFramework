@@ -3,9 +3,10 @@
 ## Project Objective:
 Implement MassSeg, a new automatic two-step breast mass segmentation method that combines the YOLOv11 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
 
-##Table of Contents:
+## Table of Contents:
 - [Installation](#installation)
     - [MATLAB Setup](#matlab-setup)
+    - [Setup Running Environment](#setup-running-environment)
 - [Project Structure](#project-structure)
 - [Running the Pipeline](#running-pipeline)
     - [Step 1: Main Pipeline](#step-1-main-pipeline)
@@ -18,9 +19,10 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
 
 ## Installation
 ### Prerequisites
-- Python 3.9 and Conda
-- Visual Studio Code (or your preferred IDE)
-- MATLAB R2024a. When installing, add these add-ons:
+- Python 3.9
+- Conda
+- Your preferred IDE (Visual Studio Code recommended)
+- MATLAB R2024 with these add-ons:
     - Image Processing Toolbox
     - MATLAB Coder
     - MATLAB Compiler
@@ -40,20 +42,19 @@ cd MassSeg
     - Search for "Using MATLAB with Python" and install the version provided by Sebastian Castro.
 2. Set Up MATLAB Path
     - In MATLAB, click Set Path.
-    - Click Add Folder and add the path to the Matlab folder in the provided Pipeline code (e.g., C:\Users\user\MassSeg\Pipeline\Matlab).
-    - Select the newly added path, click Move to Top, then Save, and Close.
+    - Click Add Folder, then add the path to the Pipeline Matlab folder (e.g., C:\Users\user\MassSeg\Pipeline\Matlab).
+    - Select the newly added path, click Move to Top, then click Save.
 
-### Setup Running Enviorment
-1. Setup the Python Enviroment
-    - In your IDE's terminal (e.g., Visual Studio Code), create a virtual environment named BCIenv by running the instal_conda_PL.ps1 script.
-    - Despues de crear el ambiente se que solo instale las ultimas versiones de torchvision, ultralytics y imageio (inclui el yaml de mi entorno, y tambien el file de requirements, pero intente volver a instalar el ambiente con esos archivos y hay cosas que no se instalan bien, no si es mejor remplazo en el instal_conda_PL file el comando para instalar los requirements con este comando: pip install torch==2.4.1 torchvision==0.19.1 tensorflow==2.17.0 ultralytics imageio==2.35.1 scipy==1.13.1 seaborn==0.13.2 pandas==2.2.2 numpy==1.26.4 matplotlib==3.9.2 h5py==3.11.0 keras==3.5.0 opencv-python==4.10.0.84)
-2. Install MATLAB Engine API for Python
+### Setup Running Environment
+1. Setup the Python Environment
+   In your IDE's terminal (e.g., Visual Studio Code), run the install_conda_PL.ps1 script.   
+3. Install MATLAB Engine API for Python
     - Follow the official [MATLAB Engine API installation steps](#https://la.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html).
-        - Before doing the installation from the MATLAB folder step, navigate to the MATLAB installation directory using the terminal (Windows-Specific Command). Be sure to be in the C:\ folder: 
+        - Before doing the installation, navigate to the MATLAB installation directory using the terminal (Windows-Specific Command). Be sure to be in the C:\ folder: 
             ```bash
             $ cd '.\Program Files\MATLAB\R2024a'
             ```
-        - Then, when installing, replace the matlabroot part of the command with a . (ex., below): 
+        - Then, when installing, replace in the command "matlabroot" with "." (ex., below): 
             ```bash
             $ cd '.\extern\engines\python'
             ```
