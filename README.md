@@ -1,4 +1,4 @@
-# MassSeg: A Breast Mass Detection and Segmentation Framework Based on Deep Learning and Active Contour Model
+# MassSeg-Framework: A Breast Mass Detection and Segmentation Framework Based on Deep Learning and Active Contour Model
 
 ## Project Objective:
 Implement MassSeg, a new automatic two-step breast mass segmentation method that combines the YOLOv11 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
