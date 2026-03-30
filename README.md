@@ -9,10 +9,10 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - [Setup Running Environment](#setup-running-environment)
 - [Project Structure](#project-structure)
 - [Running the Pipeline](#running-pipeline)
-    - [Step 1: Main Pipeline](#step-1-main-pipeline)
-    - [Step 2: Mask Post-processing](#step-2-mask-post-processing)
-    - [Step 3: Metrics Computation](#step-3-metrics-computation)
-    - [Step 4: Results Analysis](#step-4-results-analysis)
+    - [Main Pipeline](#main-pipeline)
+    - [Mask Post-processing](#mask-post-processing)
+    - [Metrics Computation](#metrics-computation)
+    - [Results Analysis](#results-analysis)
 - [Datasets](#datasets)
 - [Training YOLO Models (Google Colab)](#train-yolo)
 - [Troubleshooting](#troubleshooting)
@@ -150,7 +150,7 @@ MassSeg/
 └── README.md
 ```
 ### Running the Pipeline:
-Step 1: Main Pipeline
+1. Main Pipeline
     - Open the pipeline.py file located in the Pipeline/Code folder.
     - Modify the script as follows:
         - Path Configuration: Update the path in line 21 to your computer's path.
