@@ -149,26 +149,25 @@ MassSeg/
 │   └── requirements_PL.txt  
 └── README.md
 ```
-### Running the Pipeline:
-1. Main Pipeline
-    - Open the pipeline.py file located in the Pipeline/Code folder.
-    - Modify the script as follows:
-        - Path Configuration: Update the path in line 21 to your computer's path.
-        - Model Selection:
-            - Model train with INbreast dataset: Uncomment lines 30 and 29; comment lines 33 and 34. 
-            - Model train with CBIS-DDSM dataset: No changes needed (already set).
-        - Dataset Selection:  
-            - INbreast dataset: Uncomment lines 38 and 39; comment lines 41 and 42.  
-            - CBIS-DDSM dataset: No changes needed (already set).
-            - mini-MIAS dataset: Uncomment line 44; comment lines 41 and 42. Depending on the model selected above:  
-                - For INbreast-trained model: Uncomment line 46.    
-                - For CBIS-DDSM-trained model: Uncomment line 47.  
-        - Dataset Path Selection:
-            - If using INbreast or CBIS-DDSM datasets
-                -  No changes needed (already set).   
-            - If using mini-MIAS dataset
-                - Comment lines 51 to 57.
-                - Uncomment lines 61 to 67.
+## Running the Pipeline
+### Main Pipeline
+1. Open the pipeline.py file located in the Pipeline/Code folder.
+2. Modify the script as follows:
+    - Path Configuration: Update the path in line 21 to your computer's path.
+    - Model Selection:
+        - Model train with INbreast dataset: Uncomment lines 30 and 29; comment lines 33 and 34.
+        - Model train with CBIS-DDSM dataset: No changes needed (already set).
+    - Dataset Selection:
+        - INbreast dataset: Uncomment lines 38 and 39; comment lines 41 and 42.
+        - CBIS-DDSM dataset: No changes needed (already set).
+        - mini-MIAS dataset: Uncomment line 44; comment lines 41 and 42. Depending on the model selected above:
+            - For INbreast-trained model: Uncomment line 46.
+            - For CBIS-DDSM-trained model: Uncomment line 47.
+    - Dataset Path Selection:
+        - If using INbreast or CBIS-DDSM datasets: No changes needed (already set).
+        - If using mini-MIAS dataset:
+            - Comment lines 51 to 57.
+            - Uncomment lines 61 to 67.
     - Clean the following folders in the dataset you plan to use: (Esto no sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos que se generan para que tengan nuestros resultados y los que ellos corran)
         - INbreast dataset: Clean folders under INbreastDataset.
         - CBIS-DDSM dataset: Clean folders under CBIS-DDSMDataset.
@@ -196,7 +195,7 @@ MassSeg/
         $ cd Pipeline/Code/
         $ python pipeline.py
         ```
-2. Mask Post-processing
+### Mask Post-processing
     - Open the joinMasks.py file located in the Pipeline/Code folder
     - Modify the script as follows:
         - Path Configuration: Update the path in line 45 to your computer's path.
@@ -212,7 +211,7 @@ MassSeg/
         $ python joinMasks.py
         ```
         - Wait until it finishes running
-3. Configure and Run `metrics.py` (for INbreast and CBIS-DDSM datasets only)
+5. Configure and Run `metrics.py` (for INbreast and CBIS-DDSM datasets only)
     - Open the metrics.py file located in the Pipeline/Code folder
      - Modify the script as follows:
         - Path Configuration: Update the path in line 71 to your computer's path.
@@ -229,7 +228,7 @@ MassSeg/
           ```bash
           $ set TF_ENABLE_ONEDNN_OPTS=0
           ```
-4. Run `resultAnalysis.ipynb` (for INbreast and CBIS-DDSM datasets only)
+6. Run `resultAnalysis.ipynb` (for INbreast and CBIS-DDSM datasets only)
    - Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
    - Modify the cell as follows:
        - Path Configuration: Update the path in line 16 to your computer's path.
