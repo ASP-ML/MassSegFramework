@@ -86,16 +86,15 @@ MassSeg/
 │   │   │   └── metrics/            # Evaluation metrics (DICE, IOU, HD95) 
 │   │   └── TestLabels/             # Ground truth bounding boxes coordinates
 │   ├── Code/    
-│   │   ├── activeCountours.py    
-│   │   ├── pipeline.py  
-│   │   ├── cropImage.py  
-│   │   ├── joinMasks.py  
-│   │   ├── metrics.py  
-│   │   ├── morphsnakes_v1.py  
+│   │   ├── activeCountours.py      # Active Countour functions for segmentation        
+│   │   ├── cropImage.py            # Script to crop the detected mass
+│   │   ├── joinMasks.py            # Script to join the segmented mass masks of the same mammogram image 
+│   │   ├── metrics.py              # Script to obtain segmentation metrics (DICE, IOU, HD95)
+│   │   ├── morphsnakes_v1.py       
 │   │   ├── morphsnakes.py  
-│   │   ├── pipeline.py  
-│   │   ├── resultAnalysis.ipynb  
-│   │   ├── setup.py  
+│   │   ├── pipeline.py              # Main script to run the pipeline
+│   │   ├── resultAnalysis.ipynb     # Script to obtain detection metrics and average segmentation metrics (DICE, IOU, HD95)
+│   │   ├── setup.py                 # Default setup to run the active countour
 │   │   └── test_morphsnakes.py  
 │   ├── INbreastDataset/  
 │   │   ├── InputImages/  
@@ -116,8 +115,8 @@ MassSeg/
 │   │   │   └── metrics/  
 │   │   └── TestLabels/  
 │   ├── Matlab/  
-│   │   ├── cropToOriginalMaskCV.m  # Script to resize the segmented mask to its original size 
-│   │   └── filtered_oneImage.m  
+│   │   ├── cropToOriginalMaskCV.m  # Script to place the segmented mask in its original position within the full-size image
+│   │   └── filtered_oneImage.m     # Script to apply the median filter
 │   ├── miniMIASDataset/  
 │   │   ├── InputImages/    
 │   │   │   ├── OrignalTestImages/   
