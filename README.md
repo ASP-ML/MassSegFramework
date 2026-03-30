@@ -150,27 +150,26 @@ MassSeg/
 └── README.md
 ```
 ### Running the Pipeline:
-1. Configure and Run `pipeline.py`
+Step 1: Main Pipeline
     - Open the pipeline.py file located in the Pipeline/Code folder.
     - Modify the script as follows:
         - Path Configuration: Update the path in line 21 to your computer's path.
         - Model Selection:
-            - Model train with INbreast dataset: Uncomment line 30 and comment line 34. Run line 29 in the terminal with the BCIenv environment activated.  
-            - Model train with CBIS-DDSM dataset: Uncomment line 34 and comment line 30. Run line 33 in the terminal with the BCIenv environment activated.
+            - Model train with INbreast dataset: Uncomment lines 30 and 29; comment lines 33 and 34. 
+            - Model train with CBIS-DDSM dataset: No changes needed (already set).
         - Dataset Selection:  
-            - INbreast dataset: Uncomment lines 38 and 39; comment out everything else in this section.  
-            - CBIS-DDSM dataset: Uncomment lines 41 and 42, and comment out everything else in this section.  
-            - mini-MIAS dataset: Uncomment line 44. Depending on the model selected above:  
+            - INbreast dataset: Uncomment lines 38 and 39; comment lines 41 and 42.  
+            - CBIS-DDSM dataset: No changes needed (already set).
+            - mini-MIAS dataset: Uncomment line 44; comment lines 41 and 42. Depending on the model selected above:  
                 - For INbreast-trained model: Uncomment line 46.    
                 - For CBIS-DDSM-trained model: Uncomment line 47.  
         - Dataset Path Selection:
             - If using INbreast or CBIS-DDSM datasets
-                - Comment lines 61 to 67.
-                - Uncomment lines 51 to 57.     
+                -  No changes needed (already set).   
             - If using mini-MIAS dataset
                 - Comment lines 51 to 57.
                 - Uncomment lines 61 to 67.
-    - Clean the following folders in the dataset you plan to use: (Esto no se si es necesario o si es mejor que agreguen algo extra al nombre de los archivos que se generan para que tengan nuestros resultados y los que ellos corran)
+    - Clean the following folders in the dataset you plan to use: (Esto no sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos que se generan para que tengan nuestros resultados y los que ellos corran)
         - INbreast dataset: Clean folders under INbreastDataset.
         - CBIS-DDSM dataset: Clean folders under CBIS-DDSMDataset.
         - mini-MIAS dataset: Clean folders under miniMIASDataset.
@@ -197,8 +196,7 @@ MassSeg/
         $ cd Pipeline/Code/
         $ python pipeline.py
         ```
-        - Wait until it finishes running
-2. Configure and Run `joinMasks.py`
+2. Mask Post-processing
     - Open the joinMasks.py file located in the Pipeline/Code folder
     - Modify the script as follows:
         - Path Configuration: Update the path in line 45 to your computer's path.
