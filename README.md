@@ -226,8 +226,8 @@ MassSeg/
     > *If this warning appears: "I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`." Before running the script again run this command (Windows-Specific Command):*
     >
     > ```bash
-    > set TF_ENABLE_ONEDNN_OPTS=0
-    > ``
+    > $ set TF_ENABLE_ONEDNN_OPTS=0
+    > ```
 ### Results Analysis
 > *For INbreast and CBIS-DDSM datasets only*
    - Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
