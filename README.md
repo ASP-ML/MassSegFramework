@@ -230,14 +230,13 @@ MassSeg/
     > ```
 ### Results Analysis
 > *For INbreast and CBIS-DDSM datasets only*
-   - Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
-   - Modify the cell as follows:
-       - Path Configuration: Update the path in line 16 to your computer's path.
-       - Dataset Selection (depending on what dataset the Pipeline was tested on):
-           - INbreast dataset: Uncomment lines 23 to 24. Comment out everything else.
-           - CBIS-DDSM dataset: Uncomment lines 27 to 28. Comment out everything else.
+1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
+2. Modify the cell as follows:
+    - Path Configuration: Update the path in line 19 to your computer's path.
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment lines 26 to 27, comment lines 30 and 31.
+        - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
-        - Wait until it finishes running
 
 ## Files used and obtained from Google Collab
 INbreast YOLO dataset:  
