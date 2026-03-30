@@ -47,8 +47,8 @@ cd MassSeg
 
 ### Setup Running Environment
 1. Setup the Python Environment
-   In your IDE's terminal (e.g., Visual Studio Code), run the install_conda_PL.ps1 script.   
-3. Install MATLAB Engine API for Python
+    - In your IDE's terminal (e.g., Visual Studio Code), run the install_conda_PL.ps1 script.   
+2. Install MATLAB Engine API for Python
     - Follow the official [MATLAB Engine API installation steps](https://la.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html)
         - Before doing the installation, navigate to the MATLAB installation directory using the terminal (Windows-Specific Command). Be sure to be in the C:\ folder: 
             ```bash
@@ -70,21 +70,21 @@ MassSeg/
 │   ├── CBIS-DDSMDataset/  
 │   │   ├── InputImages/  
 │   │   │   ├── OrignalTestImages/   
-│   │   │   │   ├── groundTrue/    # Ground truth mask  
-│   │   │   │   └── images/        # Original mammograms use for the pipeline  
+│   │   │   │   ├── groundTrue/     # Ground truth mask  
+│   │   │   │   └── images/         # Original mammograms used for the pipeline  
 │   │   │   ├── PreprocessImages/    
-│   │   │   │   ├── crop/          # Crop image of the mass detected  
-│   │   │   │   ├── filtered/      # Crop image after the CLAHE filter  
-│   │   │   │   └── grayscale/     # Crop filtered image convert into grayscale  
-│   │   ├── OriginalTestImages/    # Original mammograms use as ground truth  
+│   │   │   │   ├── crop/           # Crop images of the mass detected  
+│   │   │   │   ├── filtered/       # Crop images after the CLAHE filter  
+│   │   │   │   └── grayscale/      # Crop filtered images converted into grayscale  
+│   │   ├── OriginalTestImages/     # Original mammograms use as ground truth  
 │   │   ├── Results/  
-│   │   │   ├── coordinates/       # Detected bounding boxes  
-│   │   │   ├── joinedMasks/       # Combined mammogram image size segmented mass masks  
-│   │   │   ├── masks/             # Individual segmented mass masks  
-│   │   │   │  ├── crop/           # Crop segmented mass masks  
-│   │   │   │  └── whole/          # Original mammogram image size segmented mass masks   
-│   │   │   └── metrics/           # Evaluation metrics  
-│   │   └── TestLabels/            # Ground truth bounding boxes  
+│   │   │   ├── coordinates/        # Detected bounding boxes coordinates 
+│   │   │   ├── joinedMasks/        # Combined segmented mass masks the size of the original mammogram images   
+│   │   │   ├── masks/              # Individual segmented mass masks  
+│   │   │   │  ├── crop/            # Crop segmented mass masks  
+│   │   │   │  └── whole/           # Segmented mass masks the size of the original mammogram images 
+│   │   │   └── metrics/            # Evaluation metrics (DICE, IOU, HD95) 
+│   │   └── TestLabels/             # Ground truth bounding boxes coordinates
 │   ├── Code/    
 │   │   ├── activeCountours.py    
 │   │   ├── pipeline.py  
@@ -116,7 +116,7 @@ MassSeg/
 │   │   │   └── metrics/  
 │   │   └── TestLabels/  
 │   ├── Matlab/  
-│   │   ├── cropToOriginalMaskCV.m  
+│   │   ├── cropToOriginalMaskCV.m  # Script to resize the segmented mask to its original size 
 │   │   └── filtered_oneImage.m  
 │   ├── miniMIASDataset/  
 │   │   ├── InputImages/    
@@ -124,11 +124,11 @@ MassSeg/
 │   │   │   │   ├── images/  
 │   │   │   │   └── massInfo.txt  
 │   │   │   ├── PreprocessImages/    
-│   │   │   │   ├── CBIS-DDSM/   
+│   │   │   │   ├── CBIS-DDSM/      # Crop images of the mass detected using the model trained with the CBIS-DDSM dataset
 │   │   │   │   │   ├── crop/  
 │   │   │   │   │   ├── filtered/  
 │   │   │   │   │   └── grayscale/  
-│   │   │   │   ├── INbreast/   
+│   │   │   │   ├── INbreast/       # Crop images of the mass detected using the model trained with the INbreast dataset
 │   │   │   │   │   ├── crop/  
 │   │   │   │   │   ├── filtered/  
 │   │   │   │   │   └── grayscale/  
@@ -145,8 +145,8 @@ MassSeg/
 │   │   │   │   ├── INbreast/     
 │   │   │   │   │   ├── crop/  
 │   │   │   │   │   └── whole/   
-│   │   └── processDataset.ipynb  
-│   ├── instal_conda_PL.ps1  
+│   │   └── processDataset.ipynb    # Script to rename the original files
+│   ├── instal_conda_PL.ps1         # File to set up the Python Environment
 │   └── requirements_PL.txt  
 └── README.md
 ```
