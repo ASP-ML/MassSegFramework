@@ -196,39 +196,39 @@ MassSeg/
         $ python pipeline.py
         ```
 ### Mask Post-processing
-    - Open the joinMasks.py file located in the Pipeline/Code folder
-    - Modify the script as follows:
-        - Path Configuration: Update the path in line 45 to your computer's path.
-        - Dataset Selection (depending on what dataset the Pipeline was tested on):
-            - INbreast dataset: Uncomment lines 52, 65, and 66. Comment out everything else in these sections.
-            - CBIS-DDSM dataset: Uncomment lines 55, 65, and 66. Comment out everything else in these sections.
-            - mini-MIAS dataset: Uncomment lines 58, 69, and 70. Depending on the model that you use:
-                - For INbreast-trained model: Uncomment line 60. Comment out everything else in these sections..
-                - For CBIS-DDSM-trained model: Uncomment line 62. Comment out everything else in these sections.
+1. Open the joinMasks.py file located in the Pipeline/Code folder
+2. Modify the script as follows:
+    - Path Configuration: Update the path in line 45 to your computer's path.
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment lines 52 and comment line 55.
+        - CBIS-DDSM dataset: No changes needed (already set).
+        - mini-MIAS dataset: Uncomment lines 58, 69, and 70, and comment lines 55, 65, and 66. Depending on the model that you used:
+          - For INbreast-trained model: Uncomment line 60. 
+          - For CBIS-DDSM-trained model: Uncomment line 62.
     - Run the file (make sure the BCIenv is activated):
         ```bash
         $ cd Pipeline/Code/
         $ python joinMasks.py
         ```
-        - Wait until it finishes running
-5. Configure and Run `metrics.py` (for INbreast and CBIS-DDSM datasets only)
-    - Open the metrics.py file located in the Pipeline/Code folder
-     - Modify the script as follows:
-        - Path Configuration: Update the path in line 71 to your computer's path.
-        - Dataset Selection (depending on what dataset the Pipeline was tested on):
-            - INbreast dataset: Uncomment lines 78 to 79. Comment out everything else.
-            - CBIS-DDSM dataset: Uncomment lines 82 to 83. Comment out everything else.
+### Metrics Computation 
+> *For INbreast and CBIS-DDSM datasets only*
+1. Open the metrics.py file located in the Pipeline/Code folder
+2. Modify the script as follows:
+    - Path Configuration: Update the path in line 71 to your computer's path.
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment lines 120 and 121, comment lines 124 and 125.
+        - CBIS-DDSM dataset: No changes needed (already set).
     - Run the file (make sure the BCIenv is activated):
         ```bash
         $ cd Pipeline/Code/
         $ python metrics.py
         ```
-        - Wait until it finishes running
-        - If this warning appears: "I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`." Before running the script again run this command (Windows-Specific Command):
+    > *If this warning appears: "I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`." Before running the script again run this command (Windows-Specific Command):
           ```bash
           $ set TF_ENABLE_ONEDNN_OPTS=0
-          ```
-6. Run `resultAnalysis.ipynb` (for INbreast and CBIS-DDSM datasets only)
+          ```*
+### Results Analysis
+> *For INbreast and CBIS-DDSM datasets only*
    - Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
    - Modify the cell as follows:
        - Path Configuration: Update the path in line 16 to your computer's path.
