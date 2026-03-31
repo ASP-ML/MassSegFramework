@@ -169,7 +169,7 @@ MassSeg/
             - Comment lines 51 to 57.
             - Uncomment lines 61 to 67.
     - Clean the following folders in the dataset you plan to use:
-    > *NOTE FOR REVIEWER: No sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos para diferenciar resultados.*
+   *NOTE FOR REVIEWER: No sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos para diferenciar resultados.*
         - INbreast dataset: Clean folders under INbreastDataset.
         - CBIS-DDSM dataset: Clean folders under CBIS-DDSMDataset.
         - mini-MIAS dataset: Clean folders under miniMIASDataset.
