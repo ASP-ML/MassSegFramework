@@ -12,7 +12,7 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - [Main Pipeline](#main-pipeline)
     - [Mask Post-processing](#mask-post-processing)
     - [Metrics Computation](#metrics-computation)
-    - [Results Analysis](#results-analysis)
+    - [Final Results](#final-results)
 - [Datasets](#datasets)
 - [Training YOLO Models (Google Colab)](#train-yolo)
 - [Troubleshooting](#troubleshooting)
@@ -212,6 +212,7 @@ MassSeg/
         ```
 ### Metrics Computation 
 > *For INbreast and CBIS-DDSM datasets only*
+#### Segmentation
 1. Open the metrics.py file located in the Pipeline/Code folder
 2. Modify the script as follows:
     - Path Configuration: Update the path in line 71 to your computer's path.
@@ -228,13 +229,34 @@ MassSeg/
     > ```bash
     > $ set TF_ENABLE_ONEDNN_OPTS=0
     > ```
-### Results Analysis
-> *For INbreast and CBIS-DDSM datasets only*
+#### Detection
 1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
-2. Modify the cell as follows:
-    - Path Configuration: Update the path in line 19 to your computer's path.
+2. Go to the first section: Obtaining Detection Metrics
+3. Modify the cell as follows:
+    - Path Configuration: Update the path in line 7 to your computer's path.
     - Dataset Selection (depending on what dataset the Pipeline was tested on):
-        - INbreast dataset: Uncomment lines 26 to 27, comment lines 30 and 31.
+        - INbreast dataset: Uncomment lines 12 through 14, comment lines 16 through 18.
+        - CBIS-DDSM dataset: No changes needed (already set).
+    - Run the cell (make sure the BCIenv is selected as the kernel)
+
+### Final Results
+> *For INbreast and CBIS-DDSM datasets only*
+#### Segmentation
+1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
+2. Go to the third section: Average Segmentation Metrics
+3. Modify the cell as follows:
+    - Path Configuration: Update the path in line 18 to your computer's path.
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment lines 25 and 26, comment lines 29 and 30.
+        - CBIS-DDSM dataset: No changes needed (already set).
+    - Run the cell (make sure the BCIenv is selected as the kernel)
+#### Detection
+1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
+2. Go to the second section: Average Detection Metrics
+3. Modify the cell as follows:
+    - Path Configuration: Update the path in line 6 to your computer's path.
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment line 11, comment line 12.
         - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
 
