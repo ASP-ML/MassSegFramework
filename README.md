@@ -13,9 +13,12 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - [Mask Post-processing](#mask-post-processing)
     - [Metrics Computation](#metrics-computation)
     - [Final Results](#final-results)
-- [Datasets](#datasets)
-- [Training YOLO Models (Google Colab)](#train-yolo)
-- [Troubleshooting](#troubleshooting)
+- [Datasets Used to Train the YOLO Models](#datasets_used_to_train_the_yolo_models)
+- [YOLO Models (Google Colab)](#yolo-models-(google-colab))
+    - [Hyperparameter Search](#hyperparameter-search)
+    - [Training](#training)
+- [Original Datasets](#original-datasets)
+- [Disclaimer](#disclaimer)
 
 ## Installation
 ### Prerequisites
@@ -65,7 +68,19 @@ cd MassSeg
 ## Project Structure
 ```
 MassSeg/  
-├── DetectionModels/  
+├── DetectionModels/
+│   ├── ComparisonStadistic/        # Results of the statistics tests
+│   │   ├── INbreast/  
+│   │   └── CBIS-DDSCM/               
+│   ├── GoogleColabFiles/
+│   │   ├── HyperparameterSearch/   # Script and files to run the hyperparameter search
+│   │   └── Training/               # Script and files to run the training        
+│   ├── lossGraphs/                 # Script to crop the detected mass
+│   ├── runs/                       # Results of the train models (not included in the git files)
+│   │   ├── INbreast/
+│   │   └── CBIS-DDSCM/ 
+│   ├── mannWhitneyTest.ipynb       # Script to calculate the statistics tests
+│   └── resultAnalysis.py           # Script to obtain the loss graphs and performance metrics
 ├── Pipeline/  
 │   ├── CBIS-DDSMDataset/  
 │   │   ├── InputImages/  
@@ -150,6 +165,8 @@ MassSeg/
 └── README.md
 ```
 ## Running the Pipeline
+- Download the Results of training folder in the [Datasets Used to Train the YOLO Models](#datasets_used_to_train_the_yolo_models) section.
+- Add the folder to the project at MassSeg/DetectionModels/.
 ### Main Pipeline
 1. Open the pipeline.py file located in the Pipeline/Code folder.
 2. Modify the script as follows:
@@ -211,9 +228,9 @@ MassSeg/
         $ cd Pipeline/Code/
         $ python joinMasks.py
         ```
-### Metrics Computation 
+## Metrics Computation 
 > *For INbreast and CBIS-DDSM datasets only*
-#### Segmentation
+### Segmentation
 1. Open the metrics.py file located in the Pipeline/Code folder
 2. Modify the script as follows:
     - Path Configuration: Update the path in line 71 to your computer's path.
@@ -225,12 +242,12 @@ MassSeg/
         $ cd Pipeline/Code/
         $ python metrics.py
         ```
-    > *If this warning appears: "tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`." Before running the script again run this command (Windows-Specific Command):*
+    > *If this warning appears: "tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`." Before running the script again, run this command (Windows-Specific Command):*
     >
     > ```bash
     > $ set TF_ENABLE_ONEDNN_OPTS=0
     > ```
-#### Detection
+### Detection
 1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
 2. Go to the first section: Obtaining Detection Metrics
 3. Modify the cell as follows:
@@ -240,9 +257,9 @@ MassSeg/
         - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
 
-### Final Results
+## Final Results
 > *For INbreast and CBIS-DDSM datasets only*
-#### Segmentation
+### Segmentation
 1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
 2. Go to the third section: Average Segmentation Metrics
 3. Modify the cell as follows:
@@ -251,7 +268,7 @@ MassSeg/
         - INbreast dataset: Uncomment lines 25 and 26, comment lines 29 and 30.
         - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
-#### Detection
+### Detection
 1. Open the resultAnalysis.ipynb file located in the Pipeline/Code folder
 2. Go to the second section: Average Detection Metrics
 3. Modify the cell as follows:
@@ -261,34 +278,39 @@ MassSeg/
         - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
 
-## Files used and obtained from Google Collab
-INbreast YOLO dataset:  
-https://drive.google.com/drive/folders/146_U3MwxMTfqRdaUJPODgkIXH6vBrWWd?usp=sharing  
+## Datasets Used to Train the YOLO Models
+- [INbreast YOLO dataset](https://drive.google.com/drive/folders/146_U3MwxMTfqRdaUJPODgkIXH6vBrWWd?usp=sharing)
+- [CBIS-DDSM YOLO dataset](https://drive.google.com/drive/folders/1OPgNmDeiO-PavkdBkhe1hf7xfgFFiQ4v?usp=sharing)
+- [Results of hyperparameter search](https://drive.google.com/drive/folders/181yjJ5Qf_ARlSe3YNdFMwzuvcsqkCSwJ?usp=sharing)
+- [Results of training](https://drive.google.com/drive/folders/1ydnx5jLabXlkf3drCXtF9-UrS6Zv0l_s?usp=sharing)
 
-CBIS-DDSM YOLO dataset:  
-https://drive.google.com/drive/folders/1OPgNmDeiO-PavkdBkhe1hf7xfgFFiQ4v?usp=sharing  
-
-Results YOLO folder:   
-https://drive.google.com/drive/folders/1ydnx5jLabXlkf3drCXtF9-UrS6Zv0l_s?usp=sharing  
-
-## Train YOLO models on Google Collab
-### YOLOv8 model
-1. Create a folder named YOLOV8BreastCancer on your Google Drive's My Drive section.
-2. Add to that folder the Google Colab Files zip located in DetectionModels/Google Colab Files
-3. Open `yolo_config.py`
+## YOLO Models (Google Colab)
+- Download and add the INbreast and CBIS-DDSM YOLO datasets to your Google Drive My Drive section.
+### Hyperparameter Search
+1. Create a folder named YOLOV11HyperparameterSearch in your Google Drive's My Drive section.
+2. Download and add to the YOLOV11HyperparameterSearch folder the files in .zip located in DetectionModels/GoogleColabFiles/HyperparameterSearch.
+3. Download and add to the Colab Notebooks folder in your Google Drive's My Drive section, the `YOLOV11HypS.ipynb` file located in DetectionModels/GoogleColabFiles/HyperparameterSearch.
+4. Create an account on https://wandb.ai to obtain the API key. 
+5. Open `yolo_config.py` located in YOLOV11HyperparameterSearch folder
+    - Choose dataset: uncomment the dataset you want to use, comment out the other dataset.
+6. Open the `YOLOV11HypS.ipynb` file and connect to the T4 GPU on Google Colab.
+7. Run all the cells of the notebook. 
+### Training
+1. Create a folder named YOLOV11BreastCancer in your Google Drive's My Drive section.
+2. Download and add to the YOLOV11BreastCancer folder the files in .zip located in DetectionModels/GoogleColabFiles/Training.
+3. Download and add to the Colab Notebooks folder in your Google Drive's My Drive section, the `YOLOV11BreastCancer.ipynb` file located in DetectionModels/GoogleColabFiles/Training.
+4. Open `yolo_config.py` located in YOLOV11BreastCancer folder
     - Choose dataset: uncomment the dataset you want to use, comment out the other dataset.
     - Choose model size: add to the brackets in lines 13 and 27 the name of the model size you want to train. 
-        - Example: ['yolov8n.pt','yolov8s.pt'] or ['yolov8n.pt','yolov8s.pt','yolov8m.pt']
-4. Download and add the INbreast and CBIS-DDSM YOLO datasets to your Google Drive My Drive section.
-5. In the Colab Notebooks folder in your Google Drive's My Drive section, add the `YOLOV8BreastCancer.ipynb` file. 
-6. Open the `YOLOV8BreastCancer.ipynb` file and conect to the T4 GPU on Google Colab.
-7. Run all the cells of the notebook. 
+        - Example: ['yolov11n.pt'] or ['yolov11n.pt','yolov11s.pt','yolov11m.pt']
+5. Open the `YOLOV8BreastCancer.ipynb` file and connect to the T4 GPU on Google Colab.
+6. Run all the cells of the notebook. 
 
 ## Original Datasets:
 The original databases used for this project:
-- [INbreast](#https://www.kaggle.com/datasets/ramanathansp20/inbreast-dataset?resource=download)
-- [CBIS-DDMS](#https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)
-- [mini-MIAS](#https://www.kaggle.com/datasets/kmader/mias-mammography)
+- [INbreast](https://www.kaggle.com/datasets/ramanathansp20/inbreast-dataset?resource=download)
+- [CBIS-DDMS](https://www.kaggle.com/datasets/awsaf49/cbis-ddsm-breast-cancer-image-dataset)
+- [mini-MIAS](https://www.kaggle.com/datasets/kmader/mias-mammography)
 
-## Important:
+## Disclaimer:
 Since this project is part of a research initiative, the code for creating the experimental databases or their corresponding masks used to calculate the metrics is not included.
