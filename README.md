@@ -1,7 +1,7 @@
 # MassSeg-Framework: A Breast Mass Detection and Segmentation Framework Based on Deep Learning and Active Contour Model
 
 ## Project Objective:
-Implement MassSeg, a new automatic two-step breast mass segmentation method that combines the YOLOv11 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
+Implement MassSeg-Framework, a new automatic two-step breast mass segmentation method that combines the YOLOv11 architecture with a Chan-Vesse active contour model to maximize the lesion’s detection and enhance the lesion’s segmentation on mammography images.
 
 ## Table of Contents:
 - [Installation](#installation)
@@ -34,8 +34,8 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
  
 ### Clone the repository
 ```bash
-git clone https://github.com/ASP-ML/MassSeg.git
-cd MassSeg
+git clone https://github.com/ASP-ML/MassSegFramework.git
+cd MassSegFramework
 ```
 
 ### MATLAB Setup
@@ -45,7 +45,7 @@ cd MassSeg
     - Search for "Using MATLAB with Python" and install the version provided by Sebastian Castro.
 2. Set Up MATLAB Path
     - In MATLAB, click Set Path.
-    - Click Add Folder, then add the path to the Pipeline Matlab folder (e.g., C:\Users\user\MassSeg\Pipeline\Matlab).
+    - Click Add Folder, then add the path to the Pipeline Matlab folder (e.g., C:\Users\user\MassSegFramework\Pipeline\Matlab).
     - Select the newly added path, click Move to Top, then click Save.
 
 ### Setup Running Environment
@@ -67,7 +67,7 @@ cd MassSeg
             ```
 ## Project Structure
 ```
-MassSeg/  
+MassSegFramework/  
 ├── DetectionModels/
 │   ├── ComparisonStadistic/        # Results of the statistics tests
 │   │   ├── INbreast/  
@@ -166,7 +166,7 @@ MassSeg/
 ```
 ## Running the Pipeline
 - Download the Results of training folder in the [Datasets and Results YOLO Models](#datasets-and-results-YOLO-models) section.
-- Add the folder to the project at MassSeg/DetectionModels/.
+- Add the folder to the project at MassSegFramework/DetectionModels/.
 ### Main Pipeline
 1. Open the pipeline.py file located in the Pipeline/Code folder.
 2. Modify the script as follows:
