@@ -13,8 +13,8 @@ Implement MassSeg, a new automatic two-step breast mass segmentation method that
     - [Mask Post-processing](#mask-post-processing)
     - [Metrics Computation](#metrics-computation)
     - [Final Results](#final-results)
-- [Datasets Used to Train the YOLO Models](#datasets_used_to_train_the_yolo_models)
-- [YOLO Models (Google Colab)](#yolo-models-(google-colab))
+- [Datasets and Results YOLO Models](#datasets-and-results-YOLO-models)
+- [YOLO Models (Google Colab)](#yolo-models-google-colab)
     - [Hyperparameter Search](#hyperparameter-search)
     - [Training](#training)
 - [Original Datasets](#original-datasets)
@@ -165,7 +165,7 @@ MassSeg/
 └── README.md
 ```
 ## Running the Pipeline
-- Download the Results of training folder in the [Datasets Used to Train the YOLO Models](#datasets_used_to_train_the_yolo_models) section.
+- Download the Results of training folder in the [Datasets and Results YOLO Models](#datasets-and-results-YOLO-models) section.
 - Add the folder to the project at MassSeg/DetectionModels/.
 ### Main Pipeline
 1. Open the pipeline.py file located in the Pipeline/Code folder.
@@ -278,7 +278,7 @@ MassSeg/
         - CBIS-DDSM dataset: No changes needed (already set).
     - Run the cell (make sure the BCIenv is selected as the kernel)
 
-## Datasets Used to Train the YOLO Models
+## Datasets and Results YOLO Models
 - [INbreast YOLO dataset](https://drive.google.com/drive/folders/146_U3MwxMTfqRdaUJPODgkIXH6vBrWWd?usp=sharing)
 - [CBIS-DDSM YOLO dataset](https://drive.google.com/drive/folders/1OPgNmDeiO-PavkdBkhe1hf7xfgFFiQ4v?usp=sharing)
 - [Results of hyperparameter search](https://drive.google.com/drive/folders/181yjJ5Qf_ARlSe3YNdFMwzuvcsqkCSwJ?usp=sharing)
