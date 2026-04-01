@@ -111,7 +111,7 @@ def metrics(input_folder_gt, input_folder_pl, output_folder, name):
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 ##Change according to were you are running the code
 investigation_fles_path = 'C:/Users/camiz/'
-running_path = investigation_fles_path + 'Breast_Cancer_Investigation/Pipeline/'
+running_path = investigation_fles_path + 'MassSegFramework/Pipeline/'
 
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 ##Choose a dataset to calculate the metrics on:

@@ -19,7 +19,7 @@ def grayscale(inputPath, outputPath):
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 ##Change according to were you are running the code
 investigation_fles_path = "C:/Users/camiz/"
-running_path = investigation_fles_path + "Breast_Cancer_Investigation/"
+running_path = investigation_fles_path + "MassSegFramework/"
 
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 model = "n"

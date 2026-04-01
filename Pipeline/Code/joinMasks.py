@@ -43,7 +43,7 @@ def joinMasks(wholeMaskPath, outputPath):
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 ##Change according to were you are running the code
 investigation_fles_path = 'C:/Users/camiz/'
-running_path = investigation_fles_path + 'Breast_Cancer_Investigation/Pipeline/'
+running_path = investigation_fles_path + 'MassSegFramework/Pipeline/'
 
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
 ##Choose a dataset to join the masks:
