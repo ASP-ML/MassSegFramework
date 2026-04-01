@@ -76,7 +76,7 @@ MassSeg/
 │   │   ├── HyperparameterSearch/   # Script and files to run the hyperparameter search
 │   │   └── Training/               # Script and files to run the training        
 │   ├── lossGraphs/                 # Script to crop the detected mass
-│   ├── runs/                       # Results of the train models (not included in the git files)
+│   ├── runs_test/                  # Results of the train models (not included in the git files)
 │   │   ├── INbreast/
 │   │   └── CBIS-DDSCM/ 
 │   ├── mannWhitneyTest.ipynb       # Script to calculate the statistics tests
