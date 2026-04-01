@@ -17,6 +17,7 @@ Implement MassSeg-Framework, a new automatic two-step breast mass segmentation m
 - [YOLO Models (Google Colab)](#yolo-models-google-colab)
     - [Hyperparameter Search](#hyperparameter-search)
     - [Training](#training)
+    - [Data Analysis](#data-analysis)
 - [Original Datasets](#original-datasets)
 - [Disclaimer](#disclaimer)
 
@@ -304,7 +305,28 @@ MassSegFramework/
     - Choose model size: add to the brackets in lines 13 and 27 the name of the model size you want to train. 
         - Example: ['yolov11n.pt'] or ['yolov11n.pt','yolov11s.pt','yolov11m.pt']
 5. Open the `YOLOV8BreastCancer.ipynb` file and connect to the T4 GPU on Google Colab.
-6. Run all the cells of the notebook. 
+6. Run all the cells of the notebook.
+### Data Analysis
+#### Loss Graphs
+1. Open the resultAnalysis.ipynb file located in the DetectionModels/ folder.
+2.  Modify the first cell as follows:
+    - Path Configuration: Update the path in line 46 to your computer's path.
+3. Run the cell (make sure the BCIenv is selected as the kernel)
+#### Performance Metrics
+1. Open the resultAnalysis.ipynb file located in the DetectionModels/ folder.
+2.  Modify the second cell as follows:
+    - Path Configuration: Update the path in line 5 to your computer's path.
+    - In line 8, put the model 
+    - Dataset Selection (depending on what dataset the Pipeline was tested on):
+        - INbreast dataset: Uncomment line 11, comment line 12.
+        - CBIS-DDSM dataset: No changes needed (already set).
+3. Run the cell (make sure the BCIenv is selected as the kernel)
+#### Stadistics Results
+1. Open the mannWhitneyTest.ipynb file located in the DetectionModels/ folder.
+2. Run the first 2 cells (make sure the BCIenv is selected as the kernel)
+3.  Modify the first cell below INbreast and CBIS-DDSM titles as follows:
+    - Path Configuration: Update the path in line 1 to your computer's path.
+4. Run the cells (make sure the BCIenv is selected as the kernel)
 
 ## Original Datasets:
 The original databases used for this project:
