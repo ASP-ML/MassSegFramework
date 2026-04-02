@@ -83,7 +83,10 @@ MassSegFramework/
 │   ├── mannWhitneyTest.ipynb       # Script to calculate the statistics tests
 │   └── resultAnalysis.py           # Script to obtain the loss graphs and performance metrics
 ├── Pipeline/  
-│   ├── CBIS-DDSMDataset/  
+│   ├── CBIS-DDSMDataset/
+│   │   ├── ExcludedImages/         # Images and masks not included for testing due to errors in ground truth
+│   │   │   │   ├── groundTrue/     
+│   │   │   │   └── images/ 
 │   │   ├── InputImages/  
 │   │   │   ├── OrignalTestImages/   
 │   │   │   │   ├── groundTrue/     # Ground truth mask  
