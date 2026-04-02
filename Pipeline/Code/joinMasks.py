@@ -2,6 +2,24 @@ from PIL import Image
 from os import listdir
 from pathlib import Path
 import numpy as np
+import shutil
+import os
+
+def clean_folders(path):
+    if os.path.exists(path):
+        for file in os.listdir(path):
+            file_path = os.path.join(path, file)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)  # elimina archivos
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)  # elimina carpetas
+            except Exception as e:
+                print(f"Error deleting {file_path}: {e}")
+    else:
+        print(f"Path does not exist: {path}")
+
+    print("Cleaning completed.")
 
 def binarize_array(numpy_array):
     """Binarize a numpy array."""
@@ -70,5 +88,7 @@ outputPath = running_path + dataset + '/Results/joinedMasks/'
 #outputPath = running_path + dataset + '/Results/joinedMasks/' + datasetYolo + '/'
 
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
+##Clean the output folder
+clean_folders(outputPath)
 ##For joining Pipeline Masks
 joinMasks(wholeMaskPath, outputPath)

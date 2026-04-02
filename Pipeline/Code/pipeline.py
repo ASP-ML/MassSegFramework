@@ -7,6 +7,24 @@ import os
 import cropImage as crop
 import activeCountours as AC
 import time
+import shutil
+
+def clean_folders(paths):
+    for path in paths:
+        if os.path.exists(path):
+            for file in os.listdir(path):
+                file_path = os.path.join(path, file)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)  # elimina archivos
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)  # elimina carpetas
+                except Exception as e:
+                    print(f"Error deleting {file_path}: {e}")
+        else:
+            print(f"Path does not exist: {path}")
+
+    print("Cleaning completed.")
 
 def grayscale(inputPath, outputPath):
     img_rgb = Image.open(inputPath)
@@ -67,9 +85,13 @@ path_wholeMaskOutputAC = running_path + "Pipeline/" +  dataset + "/Results/masks
 #path_wholeMaskOutputAC = running_path + "Pipeline/" + dataset + "/Results/masks/" + datasetYOLO + "/whole/"
 
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''#
+paths_to_clean = [output_crop, output_gray, output_filtered, output_AC, path_wholeMaskOutputAC]
 yoloModelPath = running_path + "DetectionModels/runs_test/" + datasetYOLO + "/yolo11" + model + ".pt/test/train/weights/best.pt"
 bbCoordDictionary = {}
 imagesOriginal = os.listdir(input_folder_testing_images)
+
+# Clean the output folders
+clean_folders(paths_to_clean)
 
 # Import the trained YOLO model
 model = YOLO(yoloModelPath)
