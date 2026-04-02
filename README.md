@@ -186,29 +186,6 @@ MassSegFramework/
         - If using mini-MIAS dataset:
             - Comment lines 51 to 57.
             - Uncomment lines 61 to 67.
-    - Clean the following folders in the dataset you plan to use:  
-   **NOTA NOEL: No sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos para diferenciar resultados.**
-        - INbreast dataset: Clean folders under INbreastDataset.
-        - CBIS-DDSM dataset: Clean folders under CBIS-DDSMDataset.
-        - mini-MIAS dataset: Clean folders under miniMIASDataset.
-        - Paths to clean include:
-            - For INbreast and CBIS-DDSM:
-                - InputImages/PreprocessImages/crop
-                - InputImages/PreprocessImages/filtered
-                - InputImages/PreprocessImages/grayscale
-                - Results/coordinates
-                - Results/joinedMasks
-                - Results/masks/crop
-                - Results/masks/whole
-                - Results/metrics
-            - For mini-MIAS:
-                - InputImages/PreprocessImages/`Dataset the model was train on`/crop
-                - InputImages/PreprocessImages/`Dataset the model was train on`/filtered
-                - InputImages/PreprocessImages/`Dataset the model was train on`/grayscale
-                - Results/coordinates
-                - Results/`Dataset the model was train on`/joinedMasks
-                - Results/masks/`Dataset the model was train on`/crop
-                - Results/masks/`Dataset the model was train on`/whole
     - Run the pipeline (make sure the BCIenv is activated):
         ```bash
         $ cd Pipeline/Code/
