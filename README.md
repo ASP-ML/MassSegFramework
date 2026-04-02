@@ -315,11 +315,7 @@ MassSegFramework/
 #### Performance Metrics
 1. Open the resultAnalysis.ipynb file located in the DetectionModels/ folder.
 2.  Modify the second cell as follows:
-    - Path Configuration: Update the path in line 5 to your computer's path.
-    - In line 8, put the model 
-    - Dataset Selection (depending on what dataset the Pipeline was tested on):
-        - INbreast dataset: Uncomment line 11, comment line 12.
-        - CBIS-DDSM dataset: No changes needed (already set).
+    - Path Configuration: Update the path in line 35 to your computer's path.
 3. Run the cell (make sure the BCIenv is selected as the kernel)
 #### Stadistics Results
 1. Open the mannWhitneyTest.ipynb file located in the DetectionModels/ folder.
