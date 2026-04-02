@@ -171,44 +171,20 @@ MassSegFramework/
 ### Main Pipeline
 1. Open the pipeline.py file located in the Pipeline/Code folder.
 2. Modify the script as follows:
-    - Path Configuration: Update the path in line 21 to your computer's path.
+    - Path Configuration: Update the path in line 39 to your computer's path.
     - Model Selection:
         - Model train with INbreast dataset: Uncomment lines 30 and 29; comment lines 33 and 34.
         - Model train with CBIS-DDSM dataset: No changes needed (already set).
     - Dataset Selection:
-        - INbreast dataset: Uncomment lines 38 and 39; comment lines 41 and 42.
+        - INbreast dataset: Uncomment lines 47 and 48; comment lines 51 and 52.
         - CBIS-DDSM dataset: No changes needed (already set).
-        - mini-MIAS dataset: Uncomment line 44; comment lines 41 and 42. Depending on the model selected above:
-            - For INbreast-trained model: Uncomment line 46.
-            - For CBIS-DDSM-trained model: Uncomment line 47.
+        - mini-MIAS dataset: Uncomment line 62; comment lines 41 and 42. Depending on the model selected above:
+            - For INbreast-trained model: Uncomment line 64.
+            - For CBIS-DDSM-trained model: Uncomment line 65.
     - Dataset Path Selection:
         - If using INbreast or CBIS-DDSM datasets: No changes needed (already set).
         - If using mini-MIAS dataset:
-            - Comment lines 51 to 57.
-            - Uncomment lines 61 to 67.
-    - Clean the following folders in the dataset you plan to use:  
-   **NOTA NOEL: No sé si es necesario o si es mejor que agreguen algo extra al nombre de los archivos para diferenciar resultados.**
-        - INbreast dataset: Clean folders under INbreastDataset.
-        - CBIS-DDSM dataset: Clean folders under CBIS-DDSMDataset.
-        - mini-MIAS dataset: Clean folders under miniMIASDataset.
-        - Paths to clean include:
-            - For INbreast and CBIS-DDSM:
-                - InputImages/PreprocessImages/crop
-                - InputImages/PreprocessImages/filtered
-                - InputImages/PreprocessImages/grayscale
-                - Results/coordinates
-                - Results/joinedMasks
-                - Results/masks/crop
-                - Results/masks/whole
-                - Results/metrics
-            - For mini-MIAS:
-                - InputImages/PreprocessImages/`Dataset the model was train on`/crop
-                - InputImages/PreprocessImages/`Dataset the model was train on`/filtered
-                - InputImages/PreprocessImages/`Dataset the model was train on`/grayscale
-                - Results/coordinates
-                - Results/`Dataset the model was train on`/joinedMasks
-                - Results/masks/`Dataset the model was train on`/crop
-                - Results/masks/`Dataset the model was train on`/whole
+            - Uncomment lines 79 to 85, and comment lines 69 to 75.
     - Run the pipeline (make sure the BCIenv is activated):
         ```bash
         $ cd Pipeline/Code/
@@ -217,13 +193,13 @@ MassSegFramework/
 ### Mask Post-processing
 1. Open the joinMasks.py file located in the Pipeline/Code folder
 2. Modify the script as follows:
-    - Path Configuration: Update the path in line 45 to your computer's path.
+    - Path Configuration: Update the path in line 63 to your computer's path.
     - Dataset Selection (depending on what dataset the Pipeline was tested on):
-        - INbreast dataset: Uncomment lines 52 and comment line 55.
+        - INbreast dataset: Uncomment lines 70 and comment line 73.
         - CBIS-DDSM dataset: No changes needed (already set).
-        - mini-MIAS dataset: Uncomment lines 58, 69, and 70, and comment lines 55, 65, and 66. Depending on the model that you used:
-          - For INbreast-trained model: Uncomment line 60. 
-          - For CBIS-DDSM-trained model: Uncomment line 62.
+        - mini-MIAS dataset: Uncomment lines 76, 87, and 88, and comment lines 73, 83, and 84. Depending on the model that you used:
+          - For INbreast-trained model: Uncomment line 78. 
+          - For CBIS-DDSM-trained model: Uncomment line 79.
     - Run the file (make sure the BCIenv is activated):
         ```bash
         $ cd Pipeline/Code/
